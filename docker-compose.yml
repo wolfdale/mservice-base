@@ -1,0 +1,7 @@
+version: '3'
+services:
+    baseMicro:
+        build: .
+        image: micro:latest
+        ports:
+          - 8081:8080
