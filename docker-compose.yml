@@ -3,5 +3,25 @@ services:
     baseMicro:
         build: .
         image: micro:latest
+        container_name: microservice
+        networks:
+            - backend
         ports:
-          - 8081:8080
+            - 8080:8080
+        depends_on:
+            - elasticsearch
+    
+    elasticsearch:
+        image: elasticsearch:7.3.2
+        container_name: elastic
+        environment: 
+            - discovery.type=single-node
+        ports:
+            - 9200:9200
+        networks:
+            - backend
+          
+
+networks:
+    backend:
+        driver: bridge
