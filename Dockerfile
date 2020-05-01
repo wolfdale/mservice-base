@@ -1,6 +1,6 @@
 FROM openjdk:jdk-alpine
 
-MAINTAINER Wolfdale <wolfdale@gmail.com>
+MAINTAINER Wolfdale <random@gmail.com>
 
 COPY target/service-0.0.1-SNAPSHOT.jar /opt/
 
